@@ -1,0 +1,80 @@
+/* Dashboard container */
+.dashboard-container {
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Card styling */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Chart container */
+.chart-container {
+  height: 400px;
+  width: 100%;
+}
+
+/* Tab buttons */
+.tab-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-button-active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.tab-button-inactive {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+/* Grid layout for charts */
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .chart-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* Blockbuster prediction styles */
+.prediction-card {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin-top: 2rem;
+}
+
+.prediction-title {
+  color: #1e40af;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.highlight {
+  color: #1d4ed8;
+  font-weight: 700;
+}

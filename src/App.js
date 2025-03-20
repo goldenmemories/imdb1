@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import IMDBDashboard from './components/IMDBDashboard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>IMDB Top 1000 Movies Dashboard</h1>
       </header>
+      <main>
+        <IMDBDashboard />
+      </main>
+      <footer className="App-footer">
+        <p>Data source: IMDB Top 1000 Movies</p>
+      </footer>
     </div>
   );
 }
