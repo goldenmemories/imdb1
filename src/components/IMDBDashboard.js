@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, ScatterChart, Scatter, ZAxis, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import Papa from 'papaparse';
-import _ from 'lodash';
 import './IMDBDashboard.css';
 
 const IMDBDashboard = () => {
-  const [data, setData] = useState([]);
   const [genreData, setGenreData] = useState([]);
   const [decadeData, setDecadeData] = useState([]);
   const [directorData, setDirectorData] = useState([]);
   const [genreRatingData, setGenreRatingData] = useState([]);
   const [decadeRatingData, setDecadeRatingData] = useState([]);
-  const [ratingDistribution, setRatingDistribution] = useState([]);
   const [actorMovieCountData, setActorMovieCountData] = useState([]);
   const [actorRatingData, setActorRatingData] = useState([]);
   const [directorActorCollabData, setDirectorActorCollabData] = useState([]);
@@ -52,9 +49,6 @@ const IMDBDashboard = () => {
   }, []);
 
   const processData = (moviesData) => {
-    // Store the full data
-    setData(moviesData);
-    
     // Process genre data
     const allGenres = [];
     moviesData.forEach(movie => {
@@ -193,14 +187,7 @@ const IMDBDashboard = () => {
       }
     });
     
-    const ratingDistForChart = Object.entries(ratingDist)
-      .map(([rating, count]) => ({ rating: parseFloat(rating), count }))
-      .sort((a, b) => a.rating - b.rating);
-    
-    setRatingDistribution(ratingDistForChart);
-
     // Process actor data
-    const actorFrequency = {};
     const actorRatings = {};
     const actorMovieCounts = {};
 
@@ -419,8 +406,6 @@ const IMDBDashboard = () => {
 
     setBlockbusterFactors(blockbusterFactorsObj);
   };
-
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658', '#8dd1e1', '#a4de6c', '#d0ed57'];
 
   if (loading) {
     return <div className="p-8 text-center">Loading IMDB data...</div>;
